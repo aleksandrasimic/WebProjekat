@@ -8,7 +8,7 @@ export class Picerija {
         this.id = id;
         this.naziv = naziv;
         this.adresa = adresa;
-        this.kapacitet = kapacitet;  //br.stolova
+        this.kapacitet = kapacitet;  //tj. broj stolova
 
         this.stolovi = [];
         this.porudzbine = [];
@@ -183,7 +183,7 @@ export class Picerija {
             selN.appendChild (opcija);
         }
 
-        //dugmići
+        //dugmići:
 
         //za rezervaciju
            
@@ -194,17 +194,19 @@ export class Picerija {
 
         dugme.onclick = (ev) => {
 
-            const ime = document.querySelector(".ime").value;       
+            const ime = kontForma1.querySelector(".ime").value;       
             console.log (ime);
 
-            const prezime = document.querySelector(".prezime").value;
+            const prezime = kontForma1.querySelector(".prezime").value;
             console.log (prezime);
 
-            const bro = document.querySelector(".broj").value;               
+            const bro = kontForma1.querySelector(".broj").value;               
             console.log (bro);
 
-            const brLjudi = document.querySelector(".brojLjudi").value;
+            const brLjudi = kontForma1.querySelector(".brojLjudi").value;
             console.log (brLjudi);
+
+            console.log(this.id);
 
 
            if (bro > this.kapacitet)
@@ -258,8 +260,8 @@ export class Picerija {
 
         dugme.onclick = (ev) => {
 
-            const bro = document.querySelector(".broj").value;               
-            console.log( bro);            
+            const bro = kontForma1.querySelector(".broj").value;               
+            console.log(bro);            
             
             fetch("https://localhost:5001/Picerija/OslobodiSto/" + bro + "/" + this.id,{
 
@@ -288,16 +290,16 @@ export class Picerija {
 
         dugme.onclick = (ev) => {
 
-            const ime = document.querySelector(".ime").value;       
+            const ime = kontForma1.querySelector(".ime").value;       
             console.log(ime);
 
-            const prezime = document.querySelector(".prezime").value;
+            const prezime = kontForma1.querySelector(".prezime").value;
             console.log(prezime);
 
-            const bro = document.querySelector(".broj").value;               
+            const bro = kontForma1.querySelector(".broj").value;               
             console.log(bro);
 
-            const brLjudi = document.querySelector(".brojLjudi").value;
+            const brLjudi = kontForma1.querySelector(".brojLjudi").value;
             console.log (brLjudi);
 
             fetch("https://localhost:5001/Picerija/IzmeniSto/"+ bro + "/" + ime + "/" + prezime + "/" + brLjudi,{
@@ -327,7 +329,7 @@ export class Picerija {
 
         dugme.onclick = (ev) => {
 
-            const br = document.querySelector(".brooj").value;               
+            const br = kontForma2.querySelector(".brooj").value;               
             console.log (br);
 
             const jeloovnik = selJ.value;       
@@ -376,7 +378,7 @@ export class Picerija {
         
            
             
-        }
+        }        
 
     }
 

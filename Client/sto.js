@@ -41,7 +41,7 @@ export class Sto {
 
     zauzmiSto(brStola, trKapacitet)
     {
-        if (this.stanje === "ZAUZET" || this.maxKapacitetStola < trKapacitet)
+       if (this.stanje === "ZAUZET")
             alert("Nije moguće zauzeti sto!");
         else 
         {
@@ -85,7 +85,7 @@ export class Sto {
 
     izmeniSto (ime, prez, trKap)
     {
-        if ( this.maxKapacitetStola < trKap )
+        if (this.maxKapacitetStola < trKap)
             alert("Nije moguće izmeniti sto!");
         else 
         {
