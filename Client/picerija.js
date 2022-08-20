@@ -226,7 +226,7 @@ export class Picerija {
                 body: JSON.stringify ({
 
                     brojStola:bro,
-                    stanje:"ZAUZET",
+                    stanjeStola:"ZAUZET",
                     trenutniKapacitetStola:brLjudi,
                     maxKapacitetStola: 10,
                     ime:ime,

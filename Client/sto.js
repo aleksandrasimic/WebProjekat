@@ -2,10 +2,10 @@ import {Porudzbina} from "./porudzbina.js";
 
 export class Sto {
 
-    constructor (brojStola, stanje, maxKapacitetStola, ime, prezime)
+    constructor (brojStola, stanjeStola, maxKapacitetStola, ime, prezime)
     {
         this.brojStola = brojStola;
-        this.stanje = stanje;
+        this.stanjeStola = stanjeStola;
         this.maxKapacitetStola = maxKapacitetStola;  
         this.trenutniKapacitetStola = 0;
         this.ime = ime;
@@ -17,7 +17,7 @@ export class Sto {
 
     vratiBoju()
     {
-        if (this.stanje == "SLOBODAN")
+        if (this.stanjeStola == "SLOBODAN")
 
             return "rgb(229, 177, 177)" ;
 
@@ -41,12 +41,12 @@ export class Sto {
 
     zauzmiSto(brStola, trKapacitet)
     {
-       if (this.stanje === "ZAUZET")
+       if (this.stanjeStola === "ZAUZET")
             alert("Nije moguće zauzeti sto!");
         else 
         {
             this.brojStola = brStola;
-            this.stanje = "ZAUZET";
+            this.stanjeStola = "ZAUZET";
             this.maxKapacitetStola = 10;
             this.trenutniKapacitetStola = trKapacitet;
             this.kontejnerSto.innerHTML = this.brojStola + " ZAUZET";
@@ -57,7 +57,7 @@ export class Sto {
 
     naruci (por)
     {
-        if (this.stanje === "SLOBODAN")
+        if (this.stanjeStola === "SLOBODAN")
             alert("Nije moguće naručiti!");
 
         else
@@ -76,7 +76,7 @@ export class Sto {
 
     oslobodiSto (br)
     {
-        this.stanje = "SLOBODAN";
+        this.stanjeStola = "SLOBODAN";
         this.trenutniKapacitet = 0;
         this.kontejnerSto.innerHTML = br + " SLOBODAN";
         this.kontejnerSto.style.backgroundColor = this.vratiBoju();   
